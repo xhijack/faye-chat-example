@@ -159,6 +159,7 @@ DEPENDENCIES
   faye
   jquery-rails
   nifty-generators
+  rack
   rails (= 3.2.15)
   rvm-capistrano
   sass-rails (~> 3.2.3)

@@ -6,7 +6,7 @@ Faye Example Chat is an example how to use faye and rails.
 
 1. <tt>git clone https://github.com/xhijack/faye-chat-example</tt>
 
-2. ./faye.sh
+2. <tt>./faye.sh</tt>
     this is for running faye
 
 3. <tt>rails s</tt>

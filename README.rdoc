@@ -9,7 +9,7 @@ Faye Example Chat is an example how to use faye and rails.
 2. ./faye.sh
     this is for running faye
 
-3. <tt>rails s<tt>
+3. <tt>rails s</tt>
 
 4. run localhost:3000 on your browser
 

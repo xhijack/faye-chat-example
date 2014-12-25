@@ -1,0 +1,28 @@
+<script>
+
+  $(function() {
+    var result = prompt("Enter your name");
+    if (result !== 'null'){
+
+      $.ajax({
+        url : '<%= register_messages_path %>',
+        type : 'post',
+        data : {'name': result}
+      });
+    }
+  });
+</script>
+<div class="container">
+  <div class="header">
+    <h2>Friends</h2>
+    <a href="#" title="Add Friend to this chat">+</a>
+  </div>
+  <div class="chat-box">
+    <div class="friends"  style="overflow: scroll; height: 350px">
+      <%- @users.each do |user| %>
+        <%= render "user", :user => user %>
+      <%- end %>
+    </div>
+
+  </div>
+</div>

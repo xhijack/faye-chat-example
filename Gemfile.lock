@@ -154,6 +154,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord-jdbc-adapter
+  activerecord-jdbcmysql-adapter
   capistrano (~> 2.15)
   coffee-rails (~> 3.2.1)
   faye

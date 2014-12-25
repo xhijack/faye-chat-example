@@ -1,10 +1,27 @@
-<h1>Chat</h1>
-
-<ul id="chat">
-  <%= render @messages %>
-</ul>
-
-<%= form_for Message.new, :remote => true do |f| %>
-  <%= f.text_field :message %>
-  <%= f.submit "Send" %>
-<% end %>
+<script>
+  $(function(){
+    result = 'new';
+    var faye = new Faye.Client('http://localhost:9292/faye');
+    faye.subscribe('/messages/' + result, function (data) {
+      eval(data);
+      alert('data');
+    });
+  })
+</script>
+<div class="container">
+  <div class="header">
+    <h2>Messages</h2>
+    <a href="#" title="Add Friend to this chat">+</a>
+  </div>
+  <div class="chat-box">
+    <div class="chatroom"  style="overflow: scroll; height: 350px">
+      <%= render @messages %>
+    </div>
+    <div class="enter-message">
+      <%= form_for Message.new, :remote => true do |f| %>
+        <%= f.text_field :message, placeholder: 'Enter your message..' %>
+        <%= f.submit "Send", class: 'send', style: "width:20%" %>
+        <% end %>
+      </div>
+    </div>
+  </div>

@@ -13,10 +13,3 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
-$(function() {
-  var faye = new Faye.Client('http://echat.sopwer.net:9292/faye');
-  alert('subscribing!')
-  faye.subscribe('/messages/new', function (data) {
-    eval(data);
-  });
-});

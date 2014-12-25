@@ -5,6 +5,19 @@ class MessagesController < ApplicationController
     @messages = Message.all
   end
 
+  def message_user
+    @username = params[:name]
+  end
+
+  def list
+    @users = User.all
+  end
+
+  def register
+    @user = User.create!(name: params['name'])
+#    render "user", :user => @user
+  end
+
   # GET /messages/1
   # GET /messages/1.json
   def show

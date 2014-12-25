@@ -31,6 +31,11 @@ group :production do
   gem 'unicorn'
 end
 
+platforms :jruby do
+  gem 'activerecord-jdbc-adapter'
+  gem 'activerecord-jdbcmysql-adapter'
+end
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

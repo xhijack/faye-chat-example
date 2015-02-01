@@ -1,7 +1,7 @@
 require "bundler/capistrano"
 require "rvm/capistrano"
 
-server "128.199.215.52", :web, :app, :db, primary: true
+server "192.241.188.148", :web, :app, :db, primary: true
 
 set :application, "pushchat"
 set :user, "ramdani"
@@ -14,7 +14,7 @@ set :app_git, "faye-chat-example"
 set :scm, "git"
 set :repository, "git@github.com:xhijack/#{app_git}.git"
 set :branch, "master"
-
+set :rvm_type, :user 
 
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true

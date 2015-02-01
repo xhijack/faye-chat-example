@@ -17,7 +17,8 @@ set :branch, "master"
 set :rvm_type, :user 
 
 default_run_options[:pty] = true
-ssh_options[:forward_agent] = true
+#ssh_options[:forward_agent] = true
+ssh_options[:keys] = %w(~/.ssh/id_rsa)
 
 after "deploy", "deploy:cleanup" # keep only the last 5 releases
 
